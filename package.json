@@ -2,5 +2,8 @@
   "devDependencies": {
     "prettier-eslint": "^17.1.2",
     "prettier-eslint-cli": "^9.2.1"
+  },
+  "scripts": {
+    "test:ping": "node scripts/test-ping.mjs"
   }
 }
