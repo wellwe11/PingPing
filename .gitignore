@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build Outputs
+dist/
+build/
+
+# Environment Variables & Secrets
+.env
+.env.*
+
+# Caches & Build Info
+.vite/
+.eslintcache
+*.tsbuildinfo
+
+# OS Junk
+.DS_Store
+Thumbs.db
