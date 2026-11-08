@@ -1,2 +1,2 @@
 // Exports
-export { validateURL } from "./validateURL/validateURL.ts";
+export { validateURL } from './validateURL/validateURL.ts';
