@@ -1,3 +1,11 @@
+/**
+ * What it does:
+ * Tests ping on different domains and logs if it works or not. Is to be run before running the software to prove that Internet is actively working.
+ *
+ * TODO(What it should do):
+ * Continously ping different domains for an ongoing period of time and collect data. Then log whether or not that data is good/flaky/bad/not working
+ */
+
 import { pingTarget } from '../backend/src/utils/pingTarget/pingTarget.ts';
 
 const ok = [];
