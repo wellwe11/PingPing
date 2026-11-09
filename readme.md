@@ -11,7 +11,7 @@ The goal is to streamline connection troubleshooting by consolidating essential 
 
 
 ## Todo's
-- [ ] Cap node & other packages to specific versions 
+- [ ] Cap node & packages to specific versions 
 - [ ] Initialize backend server and database connection
 - [ ] Implement core ping and monitoring logic
 - [ ] Build REST API routes for status data
