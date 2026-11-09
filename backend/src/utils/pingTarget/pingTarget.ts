@@ -1,6 +1,11 @@
 export const pingTarget = async (
   url: string
-): Promise<{ success: boolean; status?: number; responseTime: number }> => {
+): Promise<{
+  success: boolean;
+  status?: number;
+  responseTime: number;
+  err?: string;
+}> => {
   const start = performance.now();
 
   try {
@@ -19,6 +24,7 @@ export const pingTarget = async (
     return {
       success: false,
       responseTime,
+      err: err instanceof Error ? err.message : String(err),
     };
   }
 };
