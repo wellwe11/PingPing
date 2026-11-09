@@ -10,9 +10,9 @@ describe('pingTarget types', () => {
 
     const result = await pingTarget('https://google.come');
 
-    expect(typeof result.success).toBe('boolean');
-    expect(typeof result.status).toBe('number');
-    expect(typeof result.responseTime).toBe('number');
+    expect(result.success).toBeTypeOf('boolean');
+    expect(result.status).toBeTypeOf('number');
+    expect(result.responseTime).toBeTypeOf('number');
   });
 
   it('returns correct types on failure', async () => {
@@ -23,9 +23,9 @@ describe('pingTarget types', () => {
 
     const result = await pingTarget('https://api.example.com/error');
 
-    expect(typeof result.success).toBe('boolean');
-    expect(typeof result.status).toBe('number');
-    expect(typeof result.responseTime).toBe('number');
+    expect(result.success).toBeTypeOf('boolean');
+    expect(result.status).toBeTypeOf('number');
+    expect(result.responseTime).toBeTypeOf('number');
   });
 
   it('returns correct types on network failure', async () => {
@@ -37,8 +37,8 @@ describe('pingTarget types', () => {
       'https://api.nonexistentdomain12345.internal'
     );
 
-    expect(typeof result.responseTime).toBe('number');
-    expect(typeof result.success).toBe('boolean');
-    expect(typeof result.err).toBe('string');
+    expect(result.responseTime).toBeTypeOf('number');
+    expect(result.success).toBeTypeOf('boolean');
+    expect(result.err).toBeTypeOf('string');
   });
 });
