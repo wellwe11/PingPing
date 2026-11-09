@@ -1,5 +1,5 @@
 # Backend
-This section outlines the backend server architecture, structural organization, and foundational setup for PulsePing using Node.js, Express, TypeScript, and PostgreSQL.
+This section outlines the backend server architecture, structural organization, and foundational setup for PulsePing using Node.js, Express, Zod, TypeScript, and PostgreSQL.
 
 ### src/
 

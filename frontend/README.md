@@ -1,5 +1,5 @@
 # Frontend
-This section covers the user interface architecture, structural organization, and setup for PingPing using React, Vite, SCSS and TypeScript.
+This section covers the user interface architecture, structural organization, and setup for PingPing using React, TS, Zod, Vite, SCSS and TypeScript.
 
 
 ### src/
