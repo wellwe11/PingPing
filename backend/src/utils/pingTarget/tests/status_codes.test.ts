@@ -1,7 +1,7 @@
 import { describe, it, vi, expect } from 'vitest';
 import { pingTarget } from '../pingTarget.ts';
 
-describe('ingtarget status codes', () => {
+describe('pingTarget status codes', () => {
   it('returns status code code on success', async () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce({
       status: 200,
