@@ -2,15 +2,19 @@ export const pingTarget = async (
   url: string
 ): Promise<{
   success: boolean;
-  status?: number;
   responseTime: number;
-  err?: string;
+
+  status?: number;
+  error?: string;
 }> => {
   const start = performance.now();
 
   try {
-    // Fetch only head for lighter & faster fetches
-    const res = await fetch(url, { method: 'HEAD' });
+    // Fetch only head
+    const res = await fetch(url, {
+      method: 'HEAD',
+      signal: AbortSignal.timeout(1000),
+    });
     const responseTime = Math.round(performance.now() - start);
 
     return {
@@ -24,7 +28,7 @@ export const pingTarget = async (
     return {
       success: false,
       responseTime,
-      err: err instanceof Error ? err.message : String(err),
+      error: err instanceof Error ? err.message : String(err),
     };
   }
 };
