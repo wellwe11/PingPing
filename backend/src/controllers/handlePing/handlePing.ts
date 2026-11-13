@@ -6,11 +6,17 @@ import z from 'zod';
 export interface PingReponse {
   success: boolean;
   responseTime: number;
+  error: unknown;
 
   status?: number | unknown;
-  error?: unknown;
 }
 
+// Express 5 handles errors automatically.
+// Whole try/catch could technically be replaced with:
+// const result = await someOperation();
+// return res.json(result);
+// And Express will automatically handle response
+// TODO: Refactor
 export const handlePing = async (
   req: Request,
   res: Response<PingReponse>,
@@ -34,6 +40,7 @@ export const handlePing = async (
       success: pingResponse.success,
       responseTime: pingResponse.responseTime,
       status: pingResponse.status,
+      error: pingResponse.error,
     });
   } catch (err) {
     next(err);
