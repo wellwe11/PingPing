@@ -5,7 +5,7 @@ import z from 'zod';
 
 export interface PingReponse {
   success: boolean;
-  responseTime?: number;
+  responseTime: number;
 
   status?: number | unknown;
   error?: unknown;
