@@ -1,5 +1,6 @@
 export const pingTarget = async (
-  url: string
+  url: string,
+  abortTimeout: number
 ): Promise<{
   success: boolean;
   responseTime: number;
@@ -13,7 +14,7 @@ export const pingTarget = async (
     // Fetch only head
     const res = await fetch(url, {
       method: 'HEAD',
-      signal: AbortSignal.timeout(1000),
+      signal: AbortSignal.timeout(abortTimeout || 1000),
     });
     const responseTime = Math.round(performance.now() - start);
 
