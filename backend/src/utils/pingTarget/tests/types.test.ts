@@ -39,6 +39,6 @@ describe('pingTarget types', () => {
 
     expect(result.responseTime).toBeTypeOf('number');
     expect(result.success).toBeTypeOf('boolean');
-    expect(result.err).toBeTypeOf('string');
+    expect(result.error).toBeTypeOf('string');
   });
 });
