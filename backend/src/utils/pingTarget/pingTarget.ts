@@ -1,6 +1,6 @@
 export const pingTarget = async (
   url: string,
-  abortTimeout: number
+  abortTimeout?: number
 ): Promise<{
   success: boolean;
   responseTime: number;
