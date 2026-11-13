@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from 'express';
 
+// TODO: adapt for more precise error-handling
 export const errorHandler = (
   err: Error,
   req: Request,
