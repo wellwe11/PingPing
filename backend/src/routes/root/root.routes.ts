@@ -18,15 +18,15 @@ router.get('/', async (req, res, next) => {
       amsterdam,
       paris,
     ] = await Promise.all([
-      await pingTarget('frankfurt.linode.com'),
-      await pingTarget('london.linode.com'),
-      await pingTarget('hel.icmp.hetzner.com'),
-      await pingTarget('sto-se-ping.vultr.com'),
-      await pingTarget('waw-pl-ping.vultr.com'),
-      await pingTarget('mil-it-ping.vultr.com'),
-      await pingTarget('mad-es-ping.vultr.com'),
-      await pingTarget('ams-nl-ping.vultr.com'),
-      await pingTarget('par-fr-ping.vultr.com'),
+      pingTarget('frankfurt.linode.com'),
+      pingTarget('london.linode.com'),
+      pingTarget('hel.icmp.hetzner.com'),
+      pingTarget('sto-se-ping.vultr.com'),
+      pingTarget('waw-pl-ping.vultr.com'),
+      pingTarget('mil-it-ping.vultr.com'),
+      pingTarget('mad-es-ping.vultr.com'),
+      pingTarget('ams-nl-ping.vultr.com'),
+      pingTarget('par-fr-ping.vultr.com'),
     ]);
 
     return res.status(200).json({
