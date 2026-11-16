@@ -32,7 +32,7 @@ router.get('/', async (req, res, next) => {
     return res.status(200).json({
       success: true,
       message: 'Backend up and running',
-      placeholderData: [
+      placeholderData: {
         frankfurt,
         london,
         helsinki,
@@ -42,7 +42,7 @@ router.get('/', async (req, res, next) => {
         madrid,
         amsterdam,
         paris,
-      ],
+      },
     });
   } catch (err) {
     next(err);
