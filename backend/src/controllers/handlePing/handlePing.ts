@@ -11,6 +11,14 @@ export interface PingReponse {
   status?: number | unknown;
 }
 
+/**
+ *
+ * @param req - Express request for target URL in its body.
+ * @param res - Express response used to return ping result.
+ * @param next - Express next function for unexptected errors.
+ * @returns a JSON response containing a ping result.
+ */
+
 // Express 5 handles errors automatically.
 // Whole try/catch could technically be replaced with:
 // const result = await someOperation();
