@@ -4,6 +4,10 @@
     "prettier-eslint-cli": "^9.2.1"
   },
   "scripts": {
-    "test:ping": "node scripts/test-ping.mjs"
+    "test:ping": "node scripts/test-ping.mjs",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "test:frontend": "npm run test --prefix frontend",
+    "test:backend": "npm run test --prefix backend"
   }
 }
