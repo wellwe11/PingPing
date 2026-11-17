@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { pingTarget } from '../../utils/index.ts';
+import { pingTarget } from '@/utils/index.ts';
 
 const router = Router();
 

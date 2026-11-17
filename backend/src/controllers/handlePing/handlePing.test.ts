@@ -2,7 +2,7 @@ import { describe, expect, it, vi, beforeEach } from 'vitest';
 import type { Response, Request, NextFunction } from 'express';
 
 import { handlePing } from './handlePing.ts';
-import { pingTarget } from '../../utils/index.ts';
+import { pingTarget } from '@/utils/index.ts';
 
 vi.mock('../../utils/index.ts', () => ({
   pingTarget: vi.fn(),

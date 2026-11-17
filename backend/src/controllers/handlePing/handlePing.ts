@@ -1,5 +1,5 @@
 import type { NextFunction, Request, Response } from 'express';
-import { pingTarget } from '../../utils/index.ts';
+import { pingTarget } from '@/utils/index.ts';
 
 export interface PingReponse {
   success: boolean;

@@ -1,8 +1,8 @@
 import express from 'express';
-import { errorHandler } from './middleware/errorHandler.ts';
 
-import rootRoutes from './routes/root/root.routes.ts';
-import healthRoutes from './routes/health/health.routes.ts';
+import { errorHandler } from '@/middleware/errorHandler.ts';
+
+import { rootRoutes, healthRoutes } from '@/routes/index.ts';
 
 const app = express();
 

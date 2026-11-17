@@ -3,9 +3,10 @@
  */
 
 import { Router } from 'express';
-import { handlePing } from '../../controllers/handlePing/handlePing.ts';
-import { validateRequest } from '../../middleware/validateRequest/validateRequest.ts';
-import { pingSchema } from '../../schemas/health.schema.ts';
+
+import { handlePing } from '@/controllers/index.ts';
+import { pingSchema } from '@/schemas/index.ts';
+import { validateRequest } from '@/middleware/index.ts';
 
 const router = Router();
 

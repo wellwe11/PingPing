@@ -1,7 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
 import z from 'zod';
-import { validateRequest } from './validateRequest.ts';
 import type { Request, Response } from 'express';
+
+import { validateRequest } from './validateRequest.ts';
 
 describe('validateRequest', () => {
   it('calls next when the request body is valid', () => {
