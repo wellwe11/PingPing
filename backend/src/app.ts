@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/', rootRoutes);
+app.use('/api', rootRoutes);
 app.use('/api/health', healthRoutes);
 
 app.use(errorHandler);
