@@ -1,3 +1,4 @@
+// TODO: no longer needed. Node.js fetch() automatically handles this
 export const validateURL = (str: string): boolean => {
   let url;
 
