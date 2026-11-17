@@ -1,8 +1,8 @@
 import type { Request, Response, NextFunction } from 'express';
 
-import { type z as typeZ, z } from 'zod';
+import { z } from 'zod';
 
-export const validateRequest = (schema: typeZ.ZodType) => {
+export const validateRequest = (schema: z.ZodType) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const result = schema.safeParse(req.body);
 

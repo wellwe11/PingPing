@@ -4,7 +4,7 @@
 
 import { Router } from 'express';
 import { handlePing } from '../../controllers/handlePing/handlePing.ts';
-import { validateRequest } from '../../middleware/validateRequest.ts';
+import { validateRequest } from '../../middleware/validateRequest/validateRequest.ts';
 import { pingSchema } from '../../schemas/health.schema.ts';
 
 const router = Router();
