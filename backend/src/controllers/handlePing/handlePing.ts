@@ -30,8 +30,8 @@ export const handlePing = async (
 ) => {
   try {
     const { url } = req.body;
-
     const pingResponse = await pingTarget(url);
+
     return res.status(200).json(pingResponse);
   } catch (err) {
     next(err);
