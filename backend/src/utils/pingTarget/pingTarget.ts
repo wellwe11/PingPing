@@ -1,3 +1,5 @@
+import { normalizeURL } from '../normalizeURL/normalizeURL.ts';
+
 export const pingTarget = async (
   url: string,
   abortTimeout?: number
@@ -10,9 +12,11 @@ export const pingTarget = async (
 }> => {
   const start = performance.now();
 
+  const normalizedUrl = normalizeURL(url);
+
   try {
     // Fetch only head
-    const res = await fetch(url, {
+    const res = await fetch(normalizedUrl, {
       method: 'HEAD',
       signal: AbortSignal.timeout(abortTimeout || 1000),
     });
