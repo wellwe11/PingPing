@@ -1,12 +1,8 @@
-import Button from '@/components/ui/Button/Button';
 import './Navbar.scss';
-import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-// TODO: Fix buttons
-const buttons = ['one', 'two', 'three'];
-
 // Placeholders for now
+// TODO: Real links
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
