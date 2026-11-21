@@ -1,38 +1,48 @@
 import Button from '@/components/ui/Button/Button';
 import './Navbar.scss';
 import { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 // TODO: Fix buttons
 const buttons = ['one', 'two', 'three'];
 
-const Navbar = () => {
-  const [activeButton, setActiveButton] = useState(0);
+// Placeholders for now
+const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'something', path: '/something' },
+];
 
+const Navbar = () => {
+  const location = useLocation();
+
+  const activeIndex = navItems.findIndex(
+    ({ path }) => path === location.pathname
+  );
   return (
     <nav className="main-nav">
       <div className="main-nav__content">
-        <div
-          className="clicked-el"
-          style={{
-            height: `${100 / buttons.length}%`,
-            transform: `translateY(${activeButton * 100}%)`,
-          }}
-        />
-
-        {buttons.map((b, i) => (
-          <Button
+        {navItems.map(({ label, path }, i) => (
+          <NavLink
             key={i}
-            textPos="start"
-            size="medium"
-            hover={true}
-            className="main-button--light"
-            textClass="main-button-text--mix"
-
-            onClick={() => setActiveButton(i)}
+            to={path}
+            end
+            className={({ isActive }) =>
+              `main-nav__link ${isActive ? 'main-nav__link--active' : ''}`
+            }
           >
-            {b}
-          </Button>
+            {label}
+          </NavLink>
         ))}
+
+        <div
+          className="main-nav__indicator"
+          style={
+            {
+              '--active-index': Math.max(activeIndex, 0),
+            } as React.CSSProperties
+          }
+        />
       </div>
     </nav>
   );

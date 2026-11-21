@@ -2,10 +2,8 @@
 @use '@/styles/abstract/mixins' as *;
 
 .main-nav {
-  @include flex-start-center;
-  flex-direction: column;
-
   background-color: $light-white;
+  position: relative;
 
   @include respond-to(desktop) {
     width: clamp($breakpoint-desktop / 5, 25vw, $breakpoint-desktop / 2);
@@ -16,40 +14,57 @@
   }
 
   &__content {
+    @include flex-center-start;
+    flex-direction: column;
+
     // Adding a custom hover-for each button
     width: 100%;
 
-    position: relative;
     background-color: inherit;
+  }
 
-    // Shade-element for navigational buttons.
-    .clicked-el {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
+  &__link {
+    position: relative;
+    z-index: 1;
+    @include flex-start-center;
+    // color: $light-white;
+    // mix-blend-mode: difference;
 
-      width: 100%;
+    height: $size-13;
+    padding: 0 $spacing-md;
 
-      pointer-events: none;
+    text-decoration: none;
 
+    width: 100%;
+
+    color: $light-white;
+    mix-blend-mode: difference;
+
+    &--active {
+      color: $light-white;
       background-color: $dark-black;
+    }
 
-      transition: transform 110ms $overshoot;
+    &:hover {
+      background-color: $light-gray-trans;
     }
   }
-}
 
-.main-button--light {
-  position: relative;
-  z-index: 1;
-  color: $light-white;
-  mix-blend-mode: difference;
-}
+  // Shade-element for navigational buttons.
+  &__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
 
-.main-button-text--mix {
-  position: relative;
-  z-index: 1;
-  color: white;
-  mix-blend-mode: difference;
+    width: 100%;
+    height: $size-13;
+
+    pointer-events: none;
+
+    background-color: $dark-black;
+
+    transform: translateY(calc(var(--active-index, 0) * $size-13));
+    transition: transform 110ms $overshoot;
+  }
 }
