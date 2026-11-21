@@ -1,0 +1,75 @@
+@use '@/styles/abstract/variables' as *;
+@use '@/styles/abstract/mixins' as *;
+
+.main-button {
+  // Removing default behaviour
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+
+  // Positioning
+  @include flex-center;
+  cursor: pointer;
+
+  // Text
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  // Element size
+  width: 100%;
+  min-width: 0;
+
+  border: 1px solid blue;
+
+  // Text & button size
+  &--small {
+    font-size: $font-size-sm;
+    height: $size-9;
+  }
+
+  &--medium {
+    font-size: $font-size-md;
+    height: $size-13;
+  }
+
+  &--large {
+    font-size: $font-size-lg;
+    height: $size-17;
+  }
+
+  // Children positioning
+  &--start {
+    text-align: start;
+    justify-content: flex-start;
+  }
+
+  &--end {
+    text-align: end;
+    justify-content: flex-end;
+  }
+
+  &--center {
+    text-align: center;
+    justify-content: center;
+  }
+
+  // Effect
+  &-hover {
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  &-text {
+  }
+}
+
+// Accessability
+.main-button:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: $spacing-xs;
+}

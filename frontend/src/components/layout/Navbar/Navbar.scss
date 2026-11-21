@@ -1,0 +1,48 @@
+@use '@/styles/abstract/variables' as *;
+@use '@/styles/abstract/mixins' as *;
+
+.main-nav {
+  @include flex-start-center;
+  flex-direction: column;
+
+  background-color: orange;
+
+  @include respond-to(desktop) {
+    width: clamp($breakpoint-desktop / 5, 25vw, $breakpoint-desktop / 2);
+  }
+
+  @include respond-to(tablet) {
+    background-color: green;
+    width: clamp($breakpoint-tablet / 5, 25vw, $breakpoint-tablet / 2);
+  }
+
+  &__content {
+    // Adding a custom hover-for each button
+    width: 100%;
+
+    position: relative;
+
+    .hover-el {
+      background-color: gray;
+      &:hover {
+        // background-color: $hover-button;
+      }
+    }
+
+    .clicked-el {
+      background-color: black;
+    }
+
+    .clicked-el,
+    .hover-el {
+      width: 100%;
+
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      pointer-events: none;
+    }
+  }
+}
