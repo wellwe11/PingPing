@@ -7,7 +7,6 @@
   border: none;
   outline: none;
   background: transparent;
-  color: inherit;
   font: inherit;
 
   // Positioning
@@ -22,8 +21,6 @@
   // Element size
   width: 100%;
   min-width: 0;
-
-  border: 1px solid blue;
 
   // Text & button size
   &--small {
@@ -58,9 +55,9 @@
   }
 
   // Effect
-  &-hover {
+  &--hover {
     &:hover {
-      background-color: red;
+      background-color: $light-gray-trans;
     }
   }
 

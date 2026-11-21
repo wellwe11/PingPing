@@ -5,14 +5,13 @@
   @include flex-start-center;
   flex-direction: column;
 
-  background-color: orange;
+  background-color: $light-white;
 
   @include respond-to(desktop) {
     width: clamp($breakpoint-desktop / 5, 25vw, $breakpoint-desktop / 2);
   }
 
   @include respond-to(tablet) {
-    background-color: green;
     width: clamp($breakpoint-tablet / 5, 25vw, $breakpoint-tablet / 2);
   }
 
@@ -21,28 +20,36 @@
     width: 100%;
 
     position: relative;
+    background-color: inherit;
 
-    .hover-el {
-      background-color: gray;
-      &:hover {
-        // background-color: $hover-button;
-      }
-    }
-
+    // Shade-element for navigational buttons.
     .clicked-el {
-      background-color: black;
-    }
-
-    .clicked-el,
-    .hover-el {
-      width: 100%;
-
-      z-index: 1;
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 1;
+
+      width: 100%;
 
       pointer-events: none;
+
+      background-color: $dark-black;
+
+      transition: transform 110ms $overshoot;
     }
   }
+}
+
+.main-button--light {
+  position: relative;
+  z-index: 1;
+  color: $light-white;
+  mix-blend-mode: difference;
+}
+
+.main-button-text--mix {
+  position: relative;
+  z-index: 1;
+  color: white;
+  mix-blend-mode: difference;
 }

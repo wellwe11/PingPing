@@ -2,6 +2,7 @@ import Button from '@/components/ui/Button/Button';
 import './Navbar.scss';
 import { useState } from 'react';
 
+// TODO: Fix buttons
 const buttons = ['one', 'two', 'three'];
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
           className="clicked-el"
           style={{
             height: `${100 / buttons.length}%`,
-            top: `${(100 / buttons.length) * activeButton}%`,
+            transform: `translateY(${activeButton * 100}%)`,
           }}
         />
 
@@ -24,6 +25,8 @@ const Navbar = () => {
             textPos="start"
             size="medium"
             hover={true}
+            className="main-button--light"
+            textClass="main-button-text--mix"
 
             onClick={() => setActiveButton(i)}
           >
